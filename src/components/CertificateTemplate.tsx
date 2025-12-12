@@ -45,17 +45,27 @@ export const CertificateTemplate = forwardRef<HTMLDivElement, CertificateTemplat
               <div className="space-y-1">
                 <div
                   style={{
-                    fontSize: '15px',
+                    fontSize: '12px',
                     fontWeight: 'bold',
                     lineHeight: '1.1',
                     letterSpacing: '0.5px',
                   }}
                 >
-                  B.C HIGH
+                  P.M SHRI
                 </div>
                 <div
                   style={{
-                    fontSize: '15px',
+                    fontSize: '12px',
+                    fontWeight: 'bold',
+                    lineHeight: '1.1',
+                    letterSpacing: '0.5px',
+                  }}
+                >
+                  B.C. HIGH
+                </div>
+                <div
+                  style={{
+                    fontSize: '12px',
                     fontWeight: 'bold',
                     lineHeight: '1.1',
                     letterSpacing: '0.5px',
@@ -67,7 +77,7 @@ export const CertificateTemplate = forwardRef<HTMLDivElement, CertificateTemplat
                   style={{
                     height: '2px',
                     backgroundColor: '#ffffffff',
-                    margin: '6px 0',
+                    margin: '2px 0',
                   }}
                 />
                 <div style={{ fontSize: '10px', lineHeight: '1.2' }}>
@@ -79,7 +89,7 @@ export const CertificateTemplate = forwardRef<HTMLDivElement, CertificateTemplat
                 <div
                   style={{
                     fontSize: '9px',
-                    marginTop: '6px',
+                    marginTop: '2px',
                     paddingTop: '4px',
                     borderTop: '1px solid #ffffffff',
                   }}
@@ -95,7 +105,7 @@ export const CertificateTemplate = forwardRef<HTMLDivElement, CertificateTemplat
                 <>
                   <div
                     style={{
-                      fontSize: '22px',
+                      fontSize: '18px',
                       fontWeight: 'bold',
                       fontStyle: 'italic',
                       marginBottom: '2px',
@@ -106,13 +116,13 @@ export const CertificateTemplate = forwardRef<HTMLDivElement, CertificateTemplat
                   </div>
                   <div
                     style={{
-                      fontSize: '22px',
+                      fontSize: '18px',
                       fontWeight: 'bold',
                       marginBottom: '4px',
                       letterSpacing: '0.3px',
                     }}
                   >
-                    BRAJENDRA CHANDRA HIGH SCHOOL, RANPUR
+                    P.M SHRI BRAJENDRA CHANDRA HIGH SCHOOL, RANPUR
                   </div>
                   <div
                     style={{
@@ -136,7 +146,7 @@ export const CertificateTemplate = forwardRef<HTMLDivElement, CertificateTemplat
                     letterSpacing: '0.3px',
                   }}
                 >
-                  BRAJENDRA CHANDRA HIGH SCHOOL, RANPUR
+                  P.M SHRI BRAJENDRA CHANDRA HIGH SCHOOL, RANPUR
                 </div>
               )}
               <div
@@ -214,8 +224,8 @@ export const CertificateTemplate = forwardRef<HTMLDivElement, CertificateTemplat
               Date: {formatDate(data.issueDate)}
             </div>
                     
-            {/* Right Side: Signature Block */}
-            <div className="text-right" style={{ marginBottom: '0px' }}>
+            {/* Right Side: Signature Block - CENTER ALIGNED */}
+            <div className="text-center" style={{ marginBottom: '0px', minWidth: '220px' }}>
               <div
                 style={{
                   fontSize: '13px',
@@ -226,19 +236,19 @@ export const CertificateTemplate = forwardRef<HTMLDivElement, CertificateTemplat
                 {/* Optional Seal Space */}
               </div>
               
-              <div
+              {/* <div
                 style={{
-                  borderTop: '2px solid #ffffffff',
-                  minWidth: '220px',
-                  marginBottom: '4px',
+                  borderTop: '2px solid #000000',
+                  width: '220px',
+                  margin: '0 auto 4px auto',
                 }}
-              />
+              /> */}
           
               <div style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '2px' }}>
                 Headmaster,
               </div>
               <div style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '2px' }}>
-                B.C. High School, Ranpur
+                P.M SHRI B.C. High School, Ranpur
               </div>
               <div style={{ fontSize: '14px', fontWeight: 'bold' }}>
                 Nayagarh
