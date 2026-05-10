@@ -4,7 +4,7 @@ import { CertificateTemplate } from './CertificateTemplate';
 import { CertificateData } from '../types';
 
 interface CertificatePreviewProps {
-  data: CertificateData;
+  data: CertificateData[];
   onReset: () => void;
 }
 
@@ -21,7 +21,7 @@ export function CertificatePreview({ data, onReset }: CertificatePreviewProps) {
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-center mb-8">
             <h1 className="text-3xl font-bold text-gray-900">
-              Certificate Preview
+              Certificate Preview ({data.length} {data.length === 1 ? 'Student' : 'Students'})
             </h1>
             <div className="flex gap-3">
               <button
@@ -42,7 +42,29 @@ export function CertificatePreview({ data, onReset }: CertificatePreviewProps) {
           </div>
 
           <div className="bg-gray-100 p-8 rounded-2xl">
-            <CertificateTemplate ref={certificateRef} data={data} />
+            <div ref={certificateRef}>
+              {data.map((student, index) => (
+                <div key={index}>
+                  <CertificateTemplate data={student} />
+                  {index < data.length - 1 && (
+                    <div className="relative my-8 flex items-center justify-center">
+                      <div className="text-sm font-semibold text-gray-600 bg-gray-100 px-3 py-2 z-10">
+                        ✂️ CUT HERE ✂️
+                      </div>
+                      <div
+                        className="absolute inset-x-0"
+                        style={{
+                          height: '2px',
+                          backgroundImage: 'repeating-linear-gradient(90deg, #999 0px, #999 5px, transparent 5px, transparent 10px)',
+                          top: '50%',
+                          transform: 'translateY(-50%)',
+                        }}
+                      />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="mt-6 p-6 bg-blue-50 border border-blue-200 rounded-xl">
@@ -51,7 +73,8 @@ export function CertificatePreview({ data, onReset }: CertificatePreviewProps) {
             </h3>
             <ol className="list-decimal list-inside space-y-1 text-blue-800">
               <li>Click "Download PDF" to print or save the certificate</li>
-              <li>Print the certificate on quality paper</li>
+              <li>Print the certificate on quality paper (use A4 paper)</li>
+              {data.length === 2 && <li>Cut along the dotted line in the middle to separate the two certificates</li>}
               <li>Get the seal and signature from the headmaster</li>
               <li>The certificate is now ready for official use</li>
             </ol>
@@ -59,12 +82,64 @@ export function CertificatePreview({ data, onReset }: CertificatePreviewProps) {
         </div>
       </div>
 
-      <div className="hidden print:block">
-        <CertificateTemplate ref={certificateRef} data={data} />
+      <div className="hidden print:block" style={{ margin: 0, padding: 0 }}>
+        {data.map((student, index) => (
+          <div key={index} style={{ pageBreakInside: 'avoid', margin: 0, padding: 0 }}>
+            <CertificateTemplate data={student} />
+            {index < data.length - 1 && (
+              <div
+                style={{
+                  pageBreakInside: 'avoid',
+                  height: '8mm',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  margin: 0,
+                  padding: 0,
+                  backgroundColor: '#ffffff',
+                }}
+              >
+                <div
+                  style={{
+                    position: 'absolute',
+                    width: '100%',
+                    height: '1px',
+                    backgroundImage: 'repeating-linear-gradient(90deg, #000 0px, #000 5px, transparent 5px, transparent 10px)',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                  }}
+                />
+                <div
+                  style={{
+                    fontSize: '10px',
+                    fontWeight: 'bold',
+                    backgroundColor: '#ffffff',
+                    padding: '0px 8px',
+                    zIndex: 10,
+                    position: 'relative',
+                  }}
+                >
+                  ✂️ CUT HERE ✂️
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
 
       <style>{`
         @media print {
+          * {
+            margin: 0;
+            padding: 0;
+          }
+          html, body {
+            margin: 0;
+            padding: 0;
+            height: auto;
+          }
           body * {
             visibility: hidden;
           }
@@ -76,10 +151,13 @@ export function CertificatePreview({ data, onReset }: CertificatePreviewProps) {
             position: absolute;
             left: 0;
             top: 0;
+            width: 100%;
+            margin: 0;
+            padding: 0;
           }
           @page {
             size: A4;
-            margin: 0;
+            margin: 0mm;
           }
         }
       `}</style>

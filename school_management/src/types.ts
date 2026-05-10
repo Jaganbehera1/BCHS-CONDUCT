@@ -17,9 +17,3 @@ export interface CertificateData {
   yearTo: string;
   issueDate?: Date;
 }
-
-export interface CertificateDataList {
-  schoolType: SchoolType;
-  students: CertificateData[];
-  issueDate?: Date;
-}

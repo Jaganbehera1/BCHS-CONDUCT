@@ -9,41 +9,30 @@ type Step = 'select-type' | 'fill-form' | 'preview';
 function App() {
   const [step, setStep] = useState<Step>('select-type');
   const [schoolType, setSchoolType] = useState<SchoolType | null>(null);
-  const [certificateDataList, setCertificateDataList] = useState<CertificateData[]>([]);
+  const [certificateData, setCertificateData] = useState<CertificateData | null>(null);
 
   const handleSchoolTypeSelect = (type: SchoolType) => {
     setSchoolType(type);
-    setCertificateDataList([]);
     setStep('fill-form');
   };
 
   const handleFormSubmit = (data: CertificateData) => {
-    setCertificateDataList([...certificateDataList, {
+    setCertificateData({
       ...data,
       issueDate: new Date(),
-    }]);
-  };
-
-  const handleRemoveStudent = (index: number) => {
-    setCertificateDataList(certificateDataList.filter((_, i) => i !== index));
-  };
-
-  const handleProceedToPreview = () => {
-    if (certificateDataList.length > 0) {
-      setStep('preview');
-    }
+    });
+    setStep('preview');
   };
 
   const handleReset = () => {
     setStep('select-type');
     setSchoolType(null);
-    setCertificateDataList([]);
+    setCertificateData(null);
   };
 
   const handleBack = () => {
     setStep('select-type');
     setSchoolType(null);
-    setCertificateDataList([]);
   };
 
   return (
@@ -56,13 +45,10 @@ function App() {
           schoolType={schoolType}
           onBack={handleBack}
           onSubmit={handleFormSubmit}
-          students={certificateDataList}
-          onRemoveStudent={handleRemoveStudent}
-          onProceedToPreview={handleProceedToPreview}
         />
       )}
-      {step === 'preview' && certificateDataList.length > 0 && (
-        <CertificatePreview data={certificateDataList} onReset={handleReset} />
+      {step === 'preview' && certificateData && (
+        <CertificatePreview data={certificateData} onReset={handleReset} />
       )}
     </>
   );
