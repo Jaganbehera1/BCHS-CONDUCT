@@ -193,26 +193,24 @@ export const CertificateTemplate = ({ data }: CertificateTemplateProps) => {
             letterSpacing: '0.1px',
           }}
         >
-          <p style={{ textIndent: '35px', textAlign: 'justify', marginBottom: '6px', margin: '0 0 6px 0' }}>
-            <span style={{ fontStyle: 'italic' }}>Certified that</span>{' '}
-            <span style={{ fontWeight: 'bold' }}>
-              {data.studentName}
-            </span>
-            , <span style={{ fontStyle: 'italic' }}>{data.parentRelation}</span>{' '}
-            <span style={{ fontWeight: 'bold' }}>
-              {data.parentName}
-            </span>
-            , AT- <span style={{ fontWeight: 'bold' }}>{data.at}</span>, PO-{' '}
-            <span style={{ fontWeight: 'bold' }}>{data.po}</span>, P.S-{' '}
-            <span style={{ fontWeight: 'bold' }}>{data.ps}</span>, Block-{' '}
-            <span style={{ fontWeight: 'bold' }}>{data.block}</span>, Dist-{' '}
-            <span style={{ fontWeight: 'bold' }}>{data.dist}</span>, State-{' '}
-            <span style={{ fontWeight: 'bold' }}>{data.state}</span>, PIN-{' '}
-            <span style={{ fontWeight: 'bold' }}>{data.pin}</span>, is/was a student of
-            this institution for the period from{' '}
-            <span style={{ fontWeight: 'bold' }}>{data.yearFrom}</span> to{' '}
-            <span style={{ fontWeight: 'bold' }}>{data.yearTo}</span>.
-          </p>
+<p style={{ textIndent: '35px', textAlign: 'justify', marginBottom: '6px', margin: '0 0 6px 0' }}>
+  <span style={{ fontStyle: 'italic' }}>Certified that</span>{' '}
+  <span style={{ fontWeight: 'bold' }}>
+    {data.studentName}
+  </span>
+  , <span style={{ fontStyle: 'italic' }}>{data.parentRelation}</span>{' '}
+  <span style={{ fontWeight: 'bold' }}>
+    {data.parentName}
+  </span>
+  , AT- <span style={{ fontWeight: 'bold' }}>{data.at}</span>, PO-{' '}
+  <span style={{ fontWeight: 'bold' }}>{data.po}</span>, P.S-{' '}
+  <span style={{ fontWeight: 'bold' }}>{data.ps}</span>, Dist-{' '}
+  <span style={{ fontWeight: 'bold' }}>{data.dist}</span>, State-{' '}
+  <span style={{ fontWeight: 'bold' }}>{data.state}</span>, is/was a student of
+  this institution for the period from{' '}
+  <span style={{ fontWeight: 'bold' }}>{data.yearFrom}</span> to{' '}
+  <span style={{ fontWeight: 'bold' }}>{data.yearTo}</span>.
+</p>
 
           <p style={{ textAlign: 'justify', marginBottom: '8px', margin: '0 0 8px 0' }}>
             He/She bears good moral character to the best of my knowledge. I wish him/her all success in life.
