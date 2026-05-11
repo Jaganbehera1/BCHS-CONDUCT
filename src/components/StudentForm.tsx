@@ -20,10 +20,10 @@ export function StudentForm({ schoolType, onBack, onSubmit, students, onRemoveSt
     at: '',
     po: '',
     ps: '',
-    block: '',
+    // block: '',
     dist: '',
     state: '',
-    pin: '',
+    // pin: '',
     yearFrom: '',
     yearTo: '',
   });
@@ -44,10 +44,10 @@ export function StudentForm({ schoolType, onBack, onSubmit, students, onRemoveSt
         at: '',
         po: '',
         ps: '',
-        block: '',
+        // block: '',
         dist: '',
         state: '',
-        pin: '',
+        // pin: '',
         yearFrom: '',
         yearTo: '',
       });
@@ -232,7 +232,7 @@ export function StudentForm({ schoolType, onBack, onSubmit, students, onRemoveSt
                   </div>
 
                   {/* Block */}
-                  <div>
+                  /*<div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
                       <Building className="inline w-4 h-4 mr-2" />
                       Block *
@@ -245,7 +245,7 @@ export function StudentForm({ schoolType, onBack, onSubmit, students, onRemoveSt
                       className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none text-gray-900"
                       placeholder="Enter block name"
                     />
-                  </div>
+                  </div>*/
 
                   {/* District */}
                   <div>
@@ -279,7 +279,7 @@ export function StudentForm({ schoolType, onBack, onSubmit, students, onRemoveSt
                   </div>
 
                   {/* PIN Code */}
-                  <div>
+                  /*<div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
                       PIN Code *
                     </label>
@@ -293,7 +293,7 @@ export function StudentForm({ schoolType, onBack, onSubmit, students, onRemoveSt
                       pattern="[0-9]{6}"
                       maxLength={6}
                     />
-                  </div>
+                  </div>*/
                 </div>
               </div>
 
