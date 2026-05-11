@@ -188,9 +188,9 @@ export const CertificateTemplate = ({ data }: CertificateTemplateProps) => {
         <div
           className="px-6 mt-2 flex-1 overflow-hidden"
           style={{
-            fontSize: '13px',
-            lineHeight: '1.5',
-            letterSpacing: '0.1px',
+            fontSize: '16px',
+            lineHeight: '1.7',
+            letterSpacing: '0.2px',
           }}
         >
 <p style={{ textIndent: '35px', textAlign: 'justify', marginBottom: '6px', margin: '0 0 6px 0' }}>
