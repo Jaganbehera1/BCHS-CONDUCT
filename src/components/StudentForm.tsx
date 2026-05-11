@@ -232,20 +232,6 @@ export function StudentForm({ schoolType, onBack, onSubmit, students, onRemoveSt
                   </div>
 
                   {/* Block */}
-                  /*<div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      <Building className="inline w-4 h-4 mr-2" />
-                      Block *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.block}
-                      onChange={(e) => handleInputChange('block', e.target.value)}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none text-gray-900"
-                      placeholder="Enter block name"
-                    />
-                  </div>*/
 
                   {/* District */}
                   <div>
@@ -277,23 +263,6 @@ export function StudentForm({ schoolType, onBack, onSubmit, students, onRemoveSt
                       placeholder="Enter state name"
                     />
                   </div>
-
-                  {/* PIN Code */}
-                  /*<div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      PIN Code *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.pin}
-                      onChange={(e) => handleInputChange('pin', e.target.value.replace(/\D/g, '').slice(0, 6))}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none text-gray-900"
-                      placeholder="Enter 6-digit PIN code"
-                      pattern="[0-9]{6}"
-                      maxLength={6}
-                    />
-                  </div>*/
                 </div>
               </div>
 
